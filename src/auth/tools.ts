@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import { ObjectId } from 'mongoose'
 
-interface TokenPayload {
+export interface TokenPayload {
   _id: ObjectId
   role?: string
 }
