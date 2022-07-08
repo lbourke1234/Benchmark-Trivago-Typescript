@@ -26,7 +26,7 @@ const newUser: newRegister = {
   role: 'guest'
 }
 
-const validRegistration: newRegister = {
+export const validRegistration: newRegister = {
   email: 'test@test.com',
   password: '12345',
   role: 'guest'
