@@ -8,8 +8,6 @@ import { generateJwt } from '../auth/tools'
 
 dotenv.config()
 
-const token = '62c011b67482bdaa208c3862'
-
 const client = supertest(server)
 
 const accomm = {
@@ -24,6 +22,7 @@ const accomm = {
 beforeAll(async () => {
   await mongoose.connect(process.env.MONGO_TEST_CONNECTION!)
   let newAccom = new AccommodationModel(accomm)
+  const token = generateJwt({ _id: newAccom._id })
   console.log(newAccom)
   await newAccom.save()
 })
